@@ -104,11 +104,29 @@
         </div>
         <footer class="foot" style="margin-top: 20px;">
           <p class="lead text-center">“科学会实现所有人的梦想”</p>
-          <p class="lead text-center">
-            <a href="https://blog.csdn.net/qq_57421630" target="_blank"><i class="fa fa-link fa-lg" aria-hidden="true"></i>&nbsp; 联系我</a>
-            <a href="https://gitee.com/aniu-666/chat-gpt-website" target="_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i>&nbsp; 项目地址</a>
+          <p class="text-center">
+            <button id="show-hide-btn" class="btn btn-primary">如何问答</button>
           </p>
+          <p id="hidden-text" class="lead text-center" style="display: none;">今天天气好</p>
         </footer>
+
+        <script>
+         var showHideBtn = document.getElementById("show-hide-btn");
+         var hiddenText = document.getElementById("hidden-text");
+         var isHidden = true;
+
+         showHideBtn.addEventListener("click", function() {
+          if (isHidden) {
+            hiddenText.style.display = "block";
+            showHideBtn.textContent = "隐藏提示";
+            isHidden = false;
+          } else {
+           hiddenText.style.display = "none";
+           showHideBtn.textContent = "如何问答";
+           isHidden = true;
+          }
+        });
+       </script>
       </div>
     </div>
   </div>
